@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
-const { InjectManifest } = require('workbox-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
@@ -32,22 +32,13 @@ module.exports = () => {
         crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('logo.png'),
             sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
           },
-          {
-            src: path.resolve('src/assets/large-icon.png'),
-            size: '1024x1024' // you can also use the specifications pattern
-          },
-          {
-            src: path.resolve('src/assets/maskable-icon.png'),
-            size: '1024x1024',
-            purpose: 'maskable'
-          }
         ]
       }),
-      new InjectManifest({
-        swSrc: './src/sw.js',
+      new GenerateSW(),({
+        swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }), 
       
