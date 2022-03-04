@@ -24,6 +24,7 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new MiniCssExtractPlugin(),
+      new GenerateSW(),
       new WebpackPwaManifest({
         name: 'My Progressive Web App',
         short_name: 'MyPWA',
@@ -37,10 +38,6 @@ module.exports = () => {
           },
         ]
       }),
-      new GenerateSW(),({
-        swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
-      }), 
       
     ],
 
