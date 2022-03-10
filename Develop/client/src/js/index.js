@@ -3,6 +3,9 @@ import Editor from './editor';
 import './database';
 import '../css/style.css';
 
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 const main = document.querySelector('#main');
 main.innerHTML = '';
 
