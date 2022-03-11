@@ -2,7 +2,7 @@
 # PWA (Progressive Web Application) Text Editor
 [![License: ](https://img.shields.io/badge/license-MIT-brightgreen)](https://opensource.org/licenses/)
 #### **Name:** Honore Nelson 
-#### **Deployed Link:** 
+#### **Deployed Link:** https://jatetexteditor01.herokuapp.com/
 #### **Github Repo:** https://github.com/matisses-goldfish/textEditor
 ---
     
